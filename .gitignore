@@ -5,3 +5,4 @@ plugins/index.php
 plugins/secure-custom-fields
 plugins/01-scf
 plugins/02-php-only
+plugins/03-native
