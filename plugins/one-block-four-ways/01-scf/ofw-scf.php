@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name:       One Block Four Ways: SCF
- * Description:       Testimonial block built with Secure Custom Fields (SCF), the free plugin fron wordpress.org (ACF PRO alternative)
- * Vesrion:           1.0.0
+ * Description:       Testimonial block built with Secure Custom Fields (SCF), the free plugin from wordpress.org (an ACF PRO alternative)
+ * Version:           1.0.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
  * Requires Plugins:  secure-custom-fields
