@@ -48,13 +48,15 @@ function ofw_scf_register_block_fields() {
 					'name'          => 'quote',
 					'type'          => 'textarea',
 					'rows'          => 3,
-					'new_lines'     => ''
+					'new_lines'     => '',
+					'required'      => true
 				),
 				array(
 					'key'           => 'field_ofw_author',
 					'label'         => __( 'Author', 'ofw' ),
 					'name'          => 'author',
-					'type'          => 'text'
+					'type'          => 'text',
+					'required'      => true
 				),
 				array(
 					'key'           => 'field_ofw_role',
@@ -68,7 +70,8 @@ function ofw_scf_register_block_fields() {
 					'name'          => 'photo',
 					'type'          => 'image',
 					'return_format' => 'id',
-					'preview_size'  => 'thumbnail'
+					'preview_size'  => 'thumbnail',
+					'required'      => true
 				),
 				array(
 					'key'           => 'field_ofw_variant',
