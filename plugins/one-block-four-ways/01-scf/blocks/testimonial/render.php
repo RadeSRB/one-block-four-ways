@@ -9,8 +9,8 @@ $role    = get_field( 'role' );
 $photo   = get_field( 'photo' );
 $variant = get_field( 'variant' );
 
-if ( ! in_array( $variant, array( 'left', 'right' ), true ) ) {
-	$variant = 'left';
+if ( ! in_array( $variant, array( 'light', 'dark' ), true ) ) {
+	$variant = 'light';
 }
 
 $classes = 'testimonial is-' . $variant;
