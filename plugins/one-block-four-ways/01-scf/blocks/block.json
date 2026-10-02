@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "ofw/testimonial-scf",
+	"title": "Testimonial (SCF)",
+	"description": "Testimonial card built with Secure Custom Fields.",
+	"category": "text",
+	"icon": "format-quote",
+	"keywords": [
+		"quote",
+		"testimonial"
+	],
+	"textdomain": "ofw",
+	"style": "file:./style.css",
+	"supports": {
+		"anchor": true
+	},
+	"acf": {
+		"blockVersion": 3,
+		"renderTemplate": "render.php",
+		"autoInlineEditing": true
+	}
+}
