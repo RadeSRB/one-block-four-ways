@@ -83,3 +83,9 @@
 .testimonial--bindings .testimonial__author {
 	font-weight: 700;
 }
+
+/* Block style "Testimonial Dark" */
+.testimonial--bindings.is-style-testimonial-dark {
+	background: #18181b;
+	color: #fafafa;
+}

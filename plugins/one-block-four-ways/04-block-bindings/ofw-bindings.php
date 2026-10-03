@@ -96,6 +96,17 @@ function ofw_bindings_register() {
 		'1.0.0'
 	);
 
+	/**
+	 * We register a style for the block pattern to have option to change to dark mode
+	 */
+	register_block_style(
+		'core/group',
+		array(
+			'name' => 'testimonial-dark',
+			'label' => __( 'Testimonial Dark', 'ofw' ),
+		)
+	);
+
 	register_block_pattern(
 		'ofw/testimonials',
 		array(
