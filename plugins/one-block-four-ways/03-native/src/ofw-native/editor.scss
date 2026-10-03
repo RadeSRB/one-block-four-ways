@@ -1,0 +1,19 @@
+/* Editor only: the photo sits in a wrapper so it can be clicked to change. */
+.testimonial__photo {
+	grid-row: span 2;
+}
+
+.testimonial__photo-button {
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+
+.testimonial__photo-button img {
+	display: block;
+	width: 96px;
+	height: 96px;
+	border-radius: 50%;
+	object-fit: cover;
+}
