@@ -67,13 +67,13 @@ function ofw_demo_add_photo( $file, $name ) {
 	$photo_id = wp_insert_attachment( 
 		array(
 			'post_mime_type' => 'image/png',
-			'post_title'     => $name,
+			'post_title'     => sanitize_title( $name ), 
 			'post_status'    => 'inherit',
 		),
 		$upload['file']
 	);
 	wp_update_attachment_metadata( $photo_id, wp_generate_attachment_metadata( $photo_id, $upload['file'] ) );
-	update_post_meta( $photo_id, '_wp_attachment_image_alt', 'Portrait of' . $name );
+	update_post_meta( $photo_id, '_wp_attachment_image_alt', 'Portrait of ' . sanitize_title( $name ) );
 
 	return $photo_id;
 }
@@ -166,7 +166,7 @@ function ofw_demo_create_content() {
 				'quote'    => $jane['quote'],
 				'author'   => $jane['author'],
 				'role'     => $jane['role'],
-				'photo'    => $photo_url,
+				'photoUrl' => $photo_url,
 			)
 		),
 		
