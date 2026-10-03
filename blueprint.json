@@ -1,0 +1,91 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/testimonials-demo",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "wordpress.org/plugins",
+				"slug": "secure-custom-fields"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/RadeSRB/one-block-four-ways",
+				"ref": "main",
+				"refType": "branch",
+				"path": "01-scf"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "ofw-scf"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/RadeSRB/one-block-four-ways",
+				"ref": "main",
+				"refType": "branch",
+				"path": "02-php-only"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "ofw-php-only"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/RadeSRB/one-block-four-ways",
+				"ref": "main",
+				"refType": "branch",
+				"path": "03-native"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "ofw-native"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/RadeSRB/one-block-four-ways",
+				"ref": "main",
+				"refType": "branch",
+				"path": "04-block-bindings"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "ofw-bindings"
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/RadeSRB/one-block-four-ways",
+				"ref": "main",
+				"refType": "branch",
+				"path": "demo-content"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "ofw-demo-content"
+			}
+		}
+	]
+}
