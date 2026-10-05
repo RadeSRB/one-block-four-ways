@@ -27,13 +27,6 @@ if ( ! empty( $block['className'] ) ) {
 		</p>
 	</blockquote>
 	<figcaption>
-		<strong>
-			<?php echo esc_html( $author ); ?>
-		</strong>
-		<?php if ( $role ) : ?>, 
-			<span>
-				<?php echo esc_html( $role ); ?>
-			</span>
-		<?php endif; ?>
+		<strong><?php echo esc_html( $author ); ?></strong><?php if ( $role ) : ?>, <span><?php echo esc_html( $role ); ?></span><?php endif; ?>
 	</figcaption>
 </figure>
