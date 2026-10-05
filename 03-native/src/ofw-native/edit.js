@@ -10,19 +10,15 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { 
+import {
 	useBlockProps,
 	RichText,
 	MediaUpload,
 	MediaUploadCheck,
-	InspectorControls
+	InspectorControls,
 } from '@wordpress/block-editor';
 
-import {
-	Button,
-	PanelBody,
-	SelectControl
-} from '@wordpress/components';
+import { Button, PanelBody, SelectControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -38,6 +34,10 @@ import './editor.scss';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
  *
+ * @param {Object}   props               Block properties.
+ * @param {Object}   props.attributes    Block attributes.
+ * @param {Function} props.setAttributes Block attributes updater.
+ *
  * @return {Element} Element to render.
  */
 export default function Edit( { attributes, setAttributes } ) {
@@ -48,8 +48,8 @@ export default function Edit( { attributes, setAttributes } ) {
 	} );
 
 	const onSelectPhoto = ( media ) => {
-		setAttributes( { 
-			photoId: media.id, 
+		setAttributes( {
+			photoId: media.id,
 			photoUrl: media.sizes?.thumbnail?.url || media.url,
 		} );
 	};
@@ -87,12 +87,18 @@ export default function Edit( { attributes, setAttributes } ) {
 										type="button"
 										className="testimonial__photo-button"
 										onClick={ open }
-										aria-label={ __( 'Change photo', 'ofw' ) }
+										aria-label={ __(
+											'Change photo',
+											'ofw'
+										) }
 									>
 										<img src={ photoUrl } alt="" />
 									</button>
 								) : (
-									<Button variant="secondary" onClick={ open }>
+									<Button
+										variant="secondary"
+										onClick={ open }
+									>
 										{ __( 'Choose photo', 'ofw' ) }
 									</Button>
 								)
@@ -105,17 +111,21 @@ export default function Edit( { attributes, setAttributes } ) {
 					<RichText
 						tagName="p"
 						value={ quote }
-						onChange={ ( value ) => setAttributes( { quote: value } ) }
+						onChange={ ( value ) =>
+							setAttributes( { quote: value } )
+						}
 						placeholder={ __( 'Quote', 'ofw' ) }
 						allowedFormats={ [ 'core/bold', 'core/italic' ] }
-					/>					
+					/>
 				</blockquote>
 
 				<figcaption>
 					<RichText
 						tagName="strong"
 						value={ author }
-						onChange={ ( value ) => setAttributes( { author: value } ) }
+						onChange={ ( value ) =>
+							setAttributes( { author: value } )
+						}
 						placeholder={ __( 'Author', 'ofw' ) }
 						allowedFormats={ [] }
 					/>
@@ -123,7 +133,9 @@ export default function Edit( { attributes, setAttributes } ) {
 					<RichText
 						tagName="span"
 						value={ role }
-						onChange={ ( value ) => setAttributes( { role: value } ) }
+						onChange={ ( value ) =>
+							setAttributes( { role: value } )
+						}
 						placeholder={ __( 'Role', 'ofw' ) }
 						allowedFormats={ [] }
 					/>
