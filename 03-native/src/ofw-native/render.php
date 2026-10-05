@@ -21,9 +21,7 @@ $variant = in_array( $attributes['variant'], array( 'light', 'dark' ), true ) ? 
 	<figcaption>
 		<strong>
 			<?php echo esc_html( wp_strip_all_tags(	$attributes['author'] ) ); ?>
-			<?php if ( $attributes['role'] ) : ?>
-				, <span><?php echo esc_html( wp_strip_all_tags( $attributes['role'] ) ); ?></span>
-			<?php endif; ?>
 		</strong>
+		<?php if ( $attributes['role'] ) : ?>, <span><?php echo esc_html( wp_strip_all_tags( $attributes['role'] ) ); ?></span><?php endif; ?>		
 	</figcaption>
 </figure>
