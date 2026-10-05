@@ -4,7 +4,6 @@
 	"description": "Testimonial card built as a native block with React in the editor and PHP on the front end.",
 	"author": "Rade Erić",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --webpack-copy-php --blocks-manifest",
 		"format": "wp-scripts format",
@@ -15,9 +14,10 @@
 		"start": "wp-scripts start --webpack-copy-php --blocks-manifest"
 	},
 	"dependencies": {
-		"@wordpress/block-editor": "latest",
-		"@wordpress/blocks": "latest",
-		"@wordpress/i18n": "latest"
+		"@wordpress/block-editor": "18.0.0",
+		"@wordpress/blocks": "16.1.0",
+		"@wordpress/i18n": "6.29.0",
+		"@wordpress/components": "41.0.0"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^35.0.0"

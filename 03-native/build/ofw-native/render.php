@@ -19,11 +19,6 @@ $variant = in_array( $attributes['variant'], array( 'light', 'dark' ), true ) ? 
 		<p><?php echo wp_kses_post( $attributes['quote'] ); ?></p>
 	</blockquote>
 	<figcaption>
-		<strong>
-			<?php echo esc_html( wp_strip_all_tags(	$attributes['author'] ) ); ?>
-			<?php if ( $attributes['role'] ) : ?>
-				, <span><?php echo esc_html( wp_strip_all_tags( $attributes['role'] ) ); ?></span>
-			<?php endif; ?>
-		</strong>
+		<strong><?php echo esc_html( wp_strip_all_tags(	$attributes['author'] ) ); ?></strong><?php if ( $attributes['role'] ) : ?>, <span><?php echo esc_html( wp_strip_all_tags( $attributes['role'] ) ); ?></span><?php endif; ?>
 	</figcaption>
 </figure>
