@@ -63,17 +63,25 @@ function ofw_demo_paragraph( $html ) {
  * @return int Attachment ID
  */
 function ofw_demo_add_photo( $file, $name ) {
+	$name = sanitize_text_field( $name );
+
 	$upload   = wp_upload_bits( sanitize_title( $name ) . '.png', null, file_get_contents( __DIR__ . '/' . $file ) );
+	if ( ! empty( $upload['error'] ) ) {
+		return 0;
+	}
+
 	$photo_id = wp_insert_attachment( 
 		array(
 			'post_mime_type' => 'image/png',
-			'post_title'     => sanitize_text_field( $name ), 
+			'post_title'     => $name, 
 			'post_status'    => 'inherit',
 		),
 		$upload['file']
 	);
 	wp_update_attachment_metadata( $photo_id, wp_generate_attachment_metadata( $photo_id, $upload['file'] ) );
-	update_post_meta( $photo_id, '_wp_attachment_image_alt', 'Portrait of ' . sanitize_text_field( $name ) );
+
+	$alt = sprintf( __( 'Portrait of %s', 'ofw' ), $name );
+	update_post_meta( $photo_id, '_wp_attachment_image_alt', wp_slash( $alt ) );
 
 	return $photo_id;
 }
