@@ -11,7 +11,7 @@
  * Text Domain:       ofw
  * 
  * SCF is a fork of ACF and keeps ACF's functions and hook names.
- * The same code should run on ACF PRO 6.0+, just remove Requires Plugins line
+ * The same code should run on ACF PRO 6.6+, just remove Requires Plugins line
  * 
  * @package OneBlockFourWays
  */
@@ -19,7 +19,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * We register the block from blocks/block.json
+ * We register the block from blocks/testimonial/block.json
  * SCF accepts and reads the "acf" key in the file
  */
 function ofw_scf_register_block() {

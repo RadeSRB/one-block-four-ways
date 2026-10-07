@@ -15,7 +15,7 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
- * Returns the carm markup, core blocks with bindings to post meta
+ * Returns the card markup, core blocks with bindings to post meta
  * 
  * @return string Block markup
  */
@@ -48,7 +48,7 @@ function ofw_bindings_to_template( $blocks ) {
 }
 
 /**
- * Registers the testimonial post type, it's meta fields and the pattern
+ * Registers the testimonial post type, its meta fields and the pattern
  */
 function ofw_bindings_register() {
 	register_post_type(
@@ -68,13 +68,13 @@ function ofw_bindings_register() {
 		)
 	);
 
-	$fileds = array(
+	$fields = array(
 		'ofw_quote'  => __( 'Quote', 'ofw' ),
 		'ofw_author' => __( 'Author', 'ofw' ),
 		'ofw_role'   => __( 'Role', 'ofw' ),
 	);
 
-	foreach ( $fileds as $key => $label ) {
+	foreach ( $fields as $key => $label ) {
 		register_post_meta(
 			'ofw_testimonial',
 			$key,
